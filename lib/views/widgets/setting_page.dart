@@ -63,9 +63,17 @@ class _SettingPageState extends State<SettingPage> {
                         fontSize: 14, color: Color.fromARGB(255, 82, 81, 81)),
                   ),
                   children: [
-                    Text(
-                      'Coming Soon...',
-                      style: TextStyle(color: Colors.grey, fontSize: 12),
+                    ListTile(
+                      title: ElevatedButton(
+                        onPressed: () {},
+                        child: Text('Bahasa Indonesia'),
+                      ),
+                    ),
+                    ListTile(
+                      title: ElevatedButton(
+                        onPressed: () {},
+                        child: Text('English'),
+                      ),
                     ),
                   ],
                   childrenPadding: EdgeInsets.symmetric(vertical: 10),
