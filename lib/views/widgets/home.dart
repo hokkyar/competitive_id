@@ -1,27 +1,17 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'widgets/faq_page.dart';
-import 'widgets/home_page.dart';
-import 'widgets/setting_page.dart';
-import 'widgets/profile_page.dart';
+import 'faq_page.dart';
+import 'home_page.dart';
+import 'setting_page.dart';
+import 'profile_page.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
-      title: 'Competitive ID',
-      home: MyApp(),
-      debugShowCheckedModeBanner: false,
-    ),
-  );
-}
-
-class MyApp extends StatefulWidget {
+class Home extends StatefulWidget {
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<Home> createState() => _HomeState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _HomeState extends State<Home> {
   var _primaryColor = Color.fromARGB(255, 31, 69, 144);
   var _iconMode = Icons.dark_mode;
   int _selectedBar = 1;
