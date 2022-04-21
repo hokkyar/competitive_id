@@ -1,6 +1,11 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
+
+// utilities
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import '../../assets/app_color.dart';
+
+// pages
 import 'faq_page.dart';
 import 'home_page.dart';
 import 'setting_page.dart';
@@ -12,20 +17,22 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  var _primaryColor = Color.fromARGB(255, 31, 69, 144);
+  // Color _primaryColor = Color.fromARGB(255, 31, 69, 144);
   var _iconMode = Icons.dark_mode;
+
   int _selectedBar = 1;
   final List screens = [
     FaqPage(),
     HomePage(),
     SettingPage(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // Awal Header
       appBar: AppBar(
-        backgroundColor: _primaryColor,
+        backgroundColor: AppColor.color,
         title: Text(
           'Competitive ID',
           style: TextStyle(fontSize: 19),
@@ -58,12 +65,12 @@ class _HomeState extends State<Home> {
                     InkWell(
                       onTap: () {
                         setState(() {
-                          if (_primaryColor ==
+                          if (AppColor.color ==
                               Color.fromARGB(255, 31, 69, 144)) {
-                            _primaryColor = Color.fromARGB(255, 53, 53, 53);
+                            AppColor.color = Color.fromARGB(255, 53, 53, 53);
                             _iconMode = Icons.light_mode;
                           } else {
-                            _primaryColor = Color.fromARGB(255, 31, 69, 144);
+                            AppColor.color = Color.fromARGB(255, 31, 69, 144);
                             _iconMode = Icons.dark_mode;
                           }
                         });
@@ -76,7 +83,7 @@ class _HomeState extends State<Home> {
                     ),
                   ],
                   decoration: BoxDecoration(
-                    color: _primaryColor,
+                    color: AppColor.color,
                   ),
                   currentAccountPicture: Icon(
                     Icons.account_circle_rounded,
@@ -220,7 +227,7 @@ class _HomeState extends State<Home> {
         currentIndex:
             _selectedBar, // halaman yang dibuka (index dimulai dari 0)
         onTap: (index) => setState(() => _selectedBar = index),
-        backgroundColor: _primaryColor,
+        backgroundColor: AppColor.color,
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white,
         selectedFontSize: 10,
