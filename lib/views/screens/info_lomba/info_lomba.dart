@@ -4,6 +4,9 @@
 import 'package:flutter/material.dart';
 import '../../../assets/app_color.dart';
 
+// pages
+import 'detail_lomba.dart';
+
 class InfoLomba extends StatefulWidget {
   @override
   State<InfoLomba> createState() => _InfoLombaState();
@@ -59,7 +62,11 @@ class _InfoLombaState extends State<InfoLomba> {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 15),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Route route = MaterialPageRoute(
+                          builder: (context) => DetailLomba());
+                      Navigator.push(context, route);
+                    },
                     child: Card(
                       elevation: 3,
                       child: Container(
