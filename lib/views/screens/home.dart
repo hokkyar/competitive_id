@@ -17,7 +17,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  // Color _primaryColor = Color.fromARGB(255, 31, 69, 144);
   var _iconMode = Icons.dark_mode;
 
   int _selectedBar = 1;

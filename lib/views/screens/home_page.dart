@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 // pages
 import 'buat_lomba/buat_lomba.dart';
 import 'info_lomba/info_lomba.dart';
+import '../other/maintenance.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -87,7 +88,8 @@ class _HomePageState extends State<HomePage> {
   InkWell InfoWebinarItem(BuildContext context) {
     return InkWell(
       onTap: () {
-        Route route = MaterialPageRoute(builder: (context) => BuatLomba());
+        Route route =
+            MaterialPageRoute(builder: (context) => MaintenanceScreen());
         Navigator.push(context, route);
       },
       child: Card(
@@ -169,7 +171,8 @@ class _HomePageState extends State<HomePage> {
   InkWell BuatWebinarItem(BuildContext context) {
     return InkWell(
       onTap: () {
-        Route route = MaterialPageRoute(builder: (context) => BuatLomba());
+        Route route =
+            MaterialPageRoute(builder: (context) => MaintenanceScreen());
         Navigator.push(context, route);
       },
       child: Card(
