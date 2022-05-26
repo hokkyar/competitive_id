@@ -1,5 +1,6 @@
 //ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
+import '../../assets/app_color.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({Key? key}) : super(key: key);
@@ -67,12 +68,18 @@ class _SettingPageState extends State<SettingPage> {
                       title: ElevatedButton(
                         onPressed: () {},
                         child: Text('Bahasa Indonesia'),
+                        style: ElevatedButton.styleFrom(
+                          primary: AppColor.color,
+                        ),
                       ),
                     ),
                     ListTile(
                       title: ElevatedButton(
                         onPressed: () {},
                         child: Text('English'),
+                        style: ElevatedButton.styleFrom(
+                          primary: AppColor.color,
+                        ),
                       ),
                     ),
                   ],
