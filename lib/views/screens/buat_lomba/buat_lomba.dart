@@ -1,6 +1,7 @@
 //ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables
 
 // utilities
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../../assets/app_color.dart';
 
@@ -10,8 +11,12 @@ class BuatLomba extends StatefulWidget {
 }
 
 class _BuatLombaState extends State<BuatLomba> {
+  // controller
+  final TextEditingController namaLombaController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    CollectionReference lomba = firestore.collection('lomba');
     return Scaffold(
       appBar:
           AppBar(title: Text('Buat Lomba'), backgroundColor: AppColor.color),
@@ -36,6 +41,7 @@ class _BuatLombaState extends State<BuatLomba> {
 
           // Nama Lomba
           TextField(
+            controller: namaLombaController,
             decoration: InputDecoration(
               labelText: 'Nama Lomba',
               border: OutlineInputBorder(),
@@ -43,55 +49,60 @@ class _BuatLombaState extends State<BuatLomba> {
           ),
           SizedBox(height: 15),
 
-          // Kategori Lomba
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Kategori Lomba',
-              border: OutlineInputBorder(),
-            ),
-          ),
-          SizedBox(height: 15),
+          // // Kategori Lomba
+          // TextField(
+          //   decoration: InputDecoration(
+          //     labelText: 'Kategori Lomba',
+          //     border: OutlineInputBorder(),
+          //   ),
+          // ),
+          // SizedBox(height: 15),
 
-          // Pelaksanaan
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Pelaksanaan',
-              border: OutlineInputBorder(),
-            ),
-          ),
-          SizedBox(height: 15),
+          // // Pelaksanaan
+          // TextField(
+          //   decoration: InputDecoration(
+          //     labelText: 'Pelaksanaan',
+          //     border: OutlineInputBorder(),
+          //   ),
+          // ),
+          // SizedBox(height: 15),
 
-          // Tempat
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Tempat',
-              border: OutlineInputBorder(),
-            ),
-          ),
-          SizedBox(height: 15),
+          // // Tempat
+          // TextField(
+          //   decoration: InputDecoration(
+          //     labelText: 'Tempat',
+          //     border: OutlineInputBorder(),
+          //   ),
+          // ),
+          // SizedBox(height: 15),
 
-          // Total Hadiah
-          TextField(
-            decoration: InputDecoration(
-              labelText: 'Total Hadiah',
-              border: OutlineInputBorder(),
-            ),
-          ),
-          SizedBox(height: 15),
+          // // Total Hadiah
+          // TextField(
+          //   decoration: InputDecoration(
+          //     labelText: 'Total Hadiah',
+          //     border: OutlineInputBorder(),
+          //   ),
+          // ),
+          // SizedBox(height: 15),
 
-          // Syarat & Ketentuan
-          TextField(
-            maxLines: 2,
-            decoration: InputDecoration(
-              labelText: 'Syarat & Ketentuan',
-              border: OutlineInputBorder(),
-            ),
-          ),
-          SizedBox(height: 15),
+          // // Syarat & Ketentuan
+          // TextField(
+          //   maxLines: 2,
+          //   decoration: InputDecoration(
+          //     labelText: 'Syarat & Ketentuan',
+          //     border: OutlineInputBorder(),
+          //   ),
+          // ),
+          // SizedBox(height: 15),
 
           // tombol simpan
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              lomba.add({
+                'nama_lomba': namaLombaController.text,
+              });
+              namaLombaController.text = '';
+            },
             child: Text('Simpan'),
             style: ElevatedButton.styleFrom(
               padding: EdgeInsets.all(18),

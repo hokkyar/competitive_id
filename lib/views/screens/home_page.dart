@@ -23,61 +23,31 @@ class _HomePageState extends State<HomePage> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Selamat Datang
-            Center(
-              child: RichText(
-                  text: TextSpan(children: [
-                TextSpan(
-                    text: 'Selamat Datang, ', style: TextStyle(fontSize: 19)),
-                TextSpan(
-                    text: 'Hokky!',
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 22, 12, 82), fontSize: 19)),
-              ])),
-            ),
-            // Akhir Selamat Datang
-
             SizedBox(height: 20),
-
             // Buat Lomba & Webinar
             Center(
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Buat Lomba
                     BuatLombaItem(context),
-                    // Akhir Buat Lomba
-                    SizedBox(width: 20),
-                    // Buat Webinar
-                    BuatWebinarItem(context),
-                    // Akhir Buat Webinar
+                    InfoLombaItem(context),
                   ],
                 ),
               ),
             ),
-            // Akhir Buat Lomba & Webinar
-            SizedBox(height: 30),
-            // Info Lomba & Webinar
+            SizedBox(height: 20),
             Center(
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Info Lomba
-                    InfoLombaItem(context),
-                    // Akhir Info Lomba
-                    SizedBox(width: 20),
-                    // Info Webinar
+                    BuatWebinarItem(context),
                     InfoWebinarItem(context),
-                    // Akhir Info Webinar
                   ],
                 ),
               ),
             ),
-            // Akhir Info Lomba & Webinar
           ],
         ),
       ],

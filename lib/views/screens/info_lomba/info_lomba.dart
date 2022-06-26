@@ -18,10 +18,11 @@ class _InfoLombaState extends State<InfoLomba> {
 
   @override
   Widget build(BuildContext context) {
+    CollectionReference lomba = FirebaseFirestore.instance.collection('lomba');
     return Scaffold(
       appBar:
           AppBar(title: Text('Info Lomba'), backgroundColor: AppColor.color),
-      body: Column(
+      body: ListView(
         children: [
           // search-input
           Padding(
@@ -54,8 +55,22 @@ class _InfoLombaState extends State<InfoLomba> {
                       })),
             ),
           ),
+
           // konten
           Expanded(
+            // child: StreamBuilder<QuerySnapshot>(
+            //   stream: lomba.snapshots(),
+            //   builder: (_, snapshot) {
+            //     if (snapshot.hasData) {
+            //       return Column(
+            //         children: [],
+            //       );
+            //     } else {
+            //       return CircularProgressIndicator();
+            //     }
+            //   },
+            // ),
+
             child: ListView.builder(
               padding: EdgeInsets.all(18),
               itemCount: 5,

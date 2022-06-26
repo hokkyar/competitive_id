@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
 
 // utilities
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../../assets/app_color.dart';
 
@@ -55,7 +54,7 @@ class _HomeState extends State<Home> {
 
       // Sidebar Menu
       drawer: Container(
-        width: 350,
+        width: 285,
         child: Drawer(
           child: ListView(
             children: [
@@ -186,27 +185,6 @@ class _HomeState extends State<Home> {
                 childrenPadding: EdgeInsets.symmetric(vertical: 10),
               ),
               // Akhir Webinar Yang Diikuti
-
-              Center(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 100),
-                  child: RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: 'Terjadi Masalah? ',
-                          style: TextStyle(fontSize: 13),
-                        ),
-                        TextSpan(
-                          text: 'Laporkan!',
-                          recognizer: TapGestureRecognizer()..onTap = () {},
-                          style: TextStyle(color: Colors.blue, fontSize: 13),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
